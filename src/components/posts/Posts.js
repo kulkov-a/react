@@ -3,18 +3,25 @@ import Post from "../post/Post";
 
 export default function Posts(props) {
 
-    let [posts, setPosts] = useState( [])
+    let [posts, setPosts] = useState( []);
 
     useEffect( () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(value => value.json())
-            .then(postsFromServer)
+            .then(postsFromServer => {
                 setPosts(postsFromServer);
+            });
+
     },   []);
 
     return(
         <div>
-            posts.map(post => <Post item={post}/>)
+            {
+                posts.map(post => <Post item={post}/>)
+            }
+
         </div>
     );
 }
+
+
