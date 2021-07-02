@@ -4,7 +4,7 @@ export default function Menu(props) {
     let {items} = props;
 
     return(
-        <ul>
+        <ul>fgrgrfgffergrgrg
             {
                 items.map(item => <li className={'target'}>{item}</li>)
             }
