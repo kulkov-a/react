@@ -1,7 +1,6 @@
 export default function Comment(props) {
+    let {item} = props;
     return(
-        <div>
-
-        </div>
+        <div>{item.id} - {item.name} - {item.email}</div>
     );
 }
