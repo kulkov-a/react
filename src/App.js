@@ -6,9 +6,9 @@ function App() {
 
     <div>
 
-      <Menu item={['posts page', 'comments page', 'users page']}/>
+      <Menu items={['posts page', 'comments page', 'users page']}/>
         <Posts />
-      <Menu item={['about', 'team',]}/>
+      <Menu items={['about', 'team',]}/>
 
     </div>
 

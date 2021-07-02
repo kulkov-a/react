@@ -1,12 +1,12 @@
 
 export default function Menu(props) {
-    let {item} = props;
+    let {items} = props;
 
     return(
-        <div>
+        <ul>
             {
-
+                items.map(item => <li>{item}</li>)
             }
-        </div>
+        </ul>
     );
 }
