@@ -6,7 +6,7 @@ export default function Menu(props) {
     return(
         <ul>
             {
-                items.map(item => <li>{item}</li>)
+                items.map(item => <li className={'target'}>{item}</li>)
             }
         </ul>
     );
