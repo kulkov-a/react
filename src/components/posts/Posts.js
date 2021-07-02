@@ -13,11 +13,12 @@ export default function Posts(props) {
             });
 
     },   []);
-
+    
     return(
         <div>
             {
                 posts.map(post => <Post item={post}/>)
+
             }
 
         </div>
