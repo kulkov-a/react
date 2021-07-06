@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import User from "../user/User";
 
 export default function Users(props) {
 
@@ -19,7 +20,7 @@ export default function Users(props) {
     return(
         <div>
             {
-                users.map(user => <a href={`https://jsonplaceholder.typicode.com/users/${user.id}/posts`}>{user.id} </a> )
+                users.map(value => <User item={value}/>)
 
 
 
