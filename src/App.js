@@ -1,13 +1,27 @@
-import Users from "./components/users/Users";
-import Menu from "./components/menu/Menu";
+import {useEffect, useState} from 'react';
+import {getPost, getPosts} from './services/API';
+import Posts from './components/posts/Posts';
 
 export default function App() {
-  return (
-      <div>
-        <Menu pages={['users page', 'comments page', 'posts page']} classes={['xxx', 'yyyy']}/>
-          <Users/>
-        <Menu pages={['about ', 'team']} classes={['asd', 'qwe']}/>
 
-      </div>
-  );
+    let [post, setPost] = useState();
+    let appFn = (id) => {
+        getPost(id).then(value => setPost(value.data));
+    };
+
+    let [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        getPosts().then(value => setPosts(value.data));
+    }, []);
+    return (
+        <div>
+            <Posts items={posts} appFn={appFn}/>
+            <hr/>
+            {
+                post && <div>{JSON.stringify(post)}</div>
+            }
+            <hr/>
+        </div>
+    );
 }
